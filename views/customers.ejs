@@ -1,0 +1,41 @@
+<%- include('./templates/header.ejs') %>
+<body>
+<%- include('./templates/nav.ejs') %>
+
+<% if (data.length > 0){ %>
+    <div class="container p-3 ">
+        <h2 class="text-center">Listado De Clientes</h2>
+        <br>
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped mb-3  " id="tableData">
+                <thead>
+                <tr class="text-center ">
+                    <th scope="col">Cedula</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Direccion</th>
+
+                </tr>
+                </thead>
+                <tbody id="tBody">
+                <% data.forEach((item) =>{ %>
+                    <tr data-id="<%= item._id %>">
+                        <td><%= item.id %></td>
+                        <td><%= item.name %></td>
+                        <td><%= item.lastName %></td>
+                        <td><%= item.phone %></td>
+                        <td><%= item.address %></td>
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<% } else { %>
+    <h4> No hay datos </h4>
+<% } %>
+
+<%- include('./templates/Footer.ejs') %>
+</body>
+</html>

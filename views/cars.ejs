@@ -1,0 +1,42 @@
+<%- include('./templates/header.ejs') %>
+<body>
+<%- include('./templates/nav.ejs') %>
+
+<% if (data.length > 0){ %>
+    <div class="container p-3">
+        <h2 class="text-center">Listado De Vehículos</h2>
+        <br>
+        <div class="table-responsive-sm">
+            <table class="table table-bordered table-striped mb-3" id="tableData">
+                <thead>
+                <tr class="text-center">
+                    <th scope="col">Placa</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Modelo</th>
+
+                </tr>
+                </thead>
+                <tbody id="tBody">
+                <% data.forEach((item )=>{ %>
+                    <tr>
+                        <td><%= item.plate %></td>
+                        <td><%= item.brand %></td>
+                        <td><%= item.value %></td>
+                        <td><%= item.color %></td>
+                        <td><%= item.model %></td>
+
+                    </tr>
+                <% }) %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<% } else { %>
+    <h4> No hay datos </h4>
+<% } %>
+
+<%- include('./templates/Footer.ejs') %>
+</body>
+</html>

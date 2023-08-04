@@ -1,0 +1,37 @@
+body {
+    min-height: 100px;
+    background: url(../img/fondo.png), -webkit-gradient(linear, right top, left top, from(#404040), to(#6D6D6D));
+    font-family: "Times New Roman", serif;
+    font-size: 19px;
+    color: #fff;
+}
+
+.background-image {
+    background-image: url('../img/blue.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+.gray-background{
+    background-color: #ECECEC;
+}
+
+
+.blue-light-background{
+    background-color: #DEDEDE;
+}
+
+
+.sizeDiv {  
+    width: 85% !important;
+    height: 70% !important;
+    padding-left: 20% !important;
+    padding-top: 5% !important;
+
+}
+
+.warning{
+    color: red;
+    font-size: 14 px !important;
+}
